@@ -13,7 +13,7 @@ public class Scheduler {
 
     private final ShortenUrlService shortenUrlService;
 
-    @Scheduled(cron = "@yearly")
+    @Scheduled(cron = "@Daily")
     void deleteShortLink() {
         var deleteTime = ZonedDateTime.now().minusYears(1L).toInstant().toEpochMilli();
         shortenUrlService.deleteShortenUrl(deleteTime);
